@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &amp; Team — Brand2be | Premium Creative &amp; Digital Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-burgundy: #48191D;
+      --color-burgundy-glow: rgba(72, 25, 29, 0.45);
+      --color-champagne: #F4E8CC;
+      --color-champagne-soft: rgba(244, 232, 204, 0.85);
+      --color-obsidian: #171416;
+      --color-dark-bg: #100D0F;
+      --color-copper: #B77B55;
+      --color-copper-glow: rgba(183, 123, 85, 0.4);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-editorial: 'Instrument Serif', Georgia, serif;
+      --glass-bg: rgba(244, 232, 204, 0.05);
+      --glass-border: rgba(244, 232, 204, 0.12);
+      --glass-shadow: 0 12px 36px rgba(16, 13, 15, 0.35);
+      --glass-highlight: inset 0 1px 0 rgba(244, 232, 204, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-dark-bg);
+      color: var(--color-champagne);
+      font-family: var(--font-primary);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-color: var(--color-dark-bg);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    ::selection {
+      background: var(--color-copper);
+      color: #fff;
+    }
+
+    /* Minimal Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(244, 232, 204, 0.2);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(183, 123, 85, 0.6);
+    }
+
+    /* ==========================================================================
+       AMBIENT LIGHTING BACKGROUND (Exact About Page Concept)
+       ========================================================================== */
+    .about-ambient-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-glow-1 {
+      position: absolute;
+      top: -10%;
+      left: 20%;
+      width: 70vw;
+      height: 70vw;
+      max-width: 800px;
+      max-height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(72, 25, 29, 0.32) 0%, rgba(72, 25, 29, 0.08) 50%, transparent 70%);
+      filter: blur(80px);
+      animation: floatGlow 22s ease-in-out infinite alternate;
+    }
+
+    .ambient-glow-2 {
+      position: absolute;
+      top: 45%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 700px;
+      max-height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 123, 85, 0.16) 0%, rgba(72, 25, 29, 0.12) 45%, transparent 70%);
+      filter: blur(90px);
+      animation: floatGlow 26s ease-in-out infinite alternate-reverse;
+    }
+
+    .ambient-glow-3 {
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 75vw;
+      height: 75vw;
+      max-width: 850px;
+      max-height: 850px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(72, 25, 29, 0.25) 0%, rgba(23, 20, 22, 0.1) 50%, transparent 70%);
+      filter: blur(100px);
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* Main Content Wrapper */
+    .site-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      background: transparent;
+    }
+
+    /* Container */
+    .section-container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ==========================================================================
+       FLOATING iOS LIQUID GLASS NAVBAR (Identical across Home, About & Services)
+       ========================================================================== */
+    .glass-header-wrapper {
+      position: fixed;
+      top: 24px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+      z-index: 1000;
+      pointer-events: none;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-header {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      height: 64px;
+      padding: 0 28px;
+      background: rgba(244, 232, 204, 0.08);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(244, 232, 204, 0.18);
+      border-radius: 9999px;
+      box-shadow:
+        inset 0 1px 0 rgba(244, 232, 204, 0.16),
+        0 12px 40px rgba(16, 13, 15, 0.45);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-header:hover {
+      background: rgba(244, 232, 204, 0.11);
+      border-color: rgba(244, 232, 204, 0.25);
+      box-shadow:
+        inset 0 1px 0 rgba(244, 232, 204, 0.2),
+        0 16px 48px rgba(16, 13, 15, 0.55);
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .header-logo img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .header-logo:hover img {
+      transform: scale(1.03);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(244, 232, 204, 0.8);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.25s ease, transform 0.25s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--color-copper);
+      transition: all 0.25s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-champagne);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      background: rgba(183, 123, 85, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(183, 123, 85, 0.5);
+      color: var(--color-champagne);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(183, 123, 85, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .header-cta:hover {
+      background: var(--color-copper);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px var(--color-copper-glow);
+    }
+
+    .header-cta svg {
+      transition: transform 0.3s ease;
+    }
+
+    .header-cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-champagne);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 96px;
+      left: 20px;
+      right: 20px;
+      background: rgba(16, 13, 15, 0.94);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      border-radius: 24px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--color-champagne);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(244, 232, 204, 0.08);
+    }
+
+    /* ==========================================================================
+       1. HERO SECTION (Clean, Balanced & Editorial)
+       ========================================================================== */
+    .services-hero-section {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 155px;
+      padding-bottom: 90px;
+      position: relative;
+    }
+
+    .services-hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .services-hero-title {
+      font-size: clamp(3rem, 6.2vw, 5.8rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      color: var(--color-champagne);
+      margin-bottom: 30px;
+    }
+
+    .editorial-highlight {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--color-copper);
+      padding: 0 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Word-by-Word Scroll Reveal */
+    .word-reveal-desc {
+      font-size: clamp(1.15rem, 1.5vw, 1.32rem);
+      font-weight: 400;
+      line-height: 1.75;
+      color: rgba(244, 232, 204, 0.88);
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    .word-token {
+      display: inline-block;
+      opacity: 0.12;
+      transform: translateY(10px);
+      filter: blur(3px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+      margin-right: 0.28em;
+    }
+
+    .word-reveal-desc.active .word-token {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .services-hero-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      background: rgba(244, 232, 204, 0.05);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      color: var(--color-champagne);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-pill-btn:hover {
+      background: rgba(183, 123, 85, 0.2);
+      border-color: var(--color-copper);
+      transform: translateY(-2px);
+    }
+
+    .hero-pill-btn.primary {
+      background: linear-gradient(135deg, rgba(72, 25, 29, 0.85) 0%, rgba(183, 123, 85, 0.75) 100%);
+      border-color: rgba(244, 232, 204, 0.3);
+    }
+
+    /* ==========================================================================
+       HERO ORBITAL MOTION CENTRAL CREATIVE VISUAL
+       ========================================================================== */
+    .services-hero-visual-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1.05;
+      border-radius: 36px;
+      background: radial-gradient(circle at 50% 50%, rgba(72, 25, 29, 0.48) 0%, rgba(23, 20, 22, 0.78) 55%, rgba(16, 13, 15, 0.95) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.18),
+        inset 0 0 50px rgba(72, 25, 29, 0.3),
+        0 30px 80px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px;
+      overflow: hidden;
+    }
+
+    /* Multi-Concentric Orbital System */
+    .hero-orbital-node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 440px;
+      height: 440px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbital-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Ring 1 - Inner continuous clockwise orbit */
+    .ring-1 {
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(183, 123, 85, 0.55);
+      animation: spinClockwise 20s linear infinite;
+    }
+    .ring-1::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-copper);
+      box-shadow: 0 0 12px var(--color-copper), 0 0 20px rgba(183, 123, 85, 0.8);
+    }
+
+    /* Ring 2 - Dashed counter-clockwise */
+    .ring-2 {
+      width: 270px;
+      height: 270px;
+      border: 1px dashed rgba(244, 232, 204, 0.22);
+      animation: spinCounter 28s linear infinite;
+    }
+
+    /* Ring 3 - Burgundy & Copper orbital ring */
+    .ring-3 {
+      width: 345px;
+      height: 345px;
+      border: 1px solid rgba(72, 25, 29, 0.75);
+      animation: spinClockwise 38s linear infinite;
+    }
+    .ring-3::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 25%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-champagne);
+      box-shadow: 0 0 10px var(--color-champagne);
+    }
+
+    /* Ring 4 - Outer subtle dotted ring */
+    .ring-4 {
+      width: 415px;
+      height: 415px;
+      border: 1px dotted rgba(244, 232, 204, 0.16);
+      animation: spinCounter 48s linear infinite;
+    }
+    .ring-4::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: -3px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(183, 123, 85, 0.8);
+      box-shadow: 0 0 8px var(--color-copper);
+    }
+
+    /* Ring 5 - Atmospheric outer boundary aura */
+    .ring-5 {
+      width: 470px;
+      height: 470px;
+      border: 1px solid rgba(183, 123, 85, 0.1);
+      border-radius: 50%;
+    }
+
+    @keyframes spinClockwise {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes spinCounter {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+
+    .hero-center-monogram {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      pointer-events: auto;
+      user-select: none;
+    }
+
+    .hero-triad-title {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--color-champagne);
+      margin-bottom: 8px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-triad-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      background: rgba(16, 13, 15, 0.6);
+      border: 1px solid rgba(183, 123, 85, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+    .editorial-section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background: var(--color-copper);
+    }
+
+    .section-heading-large {
+      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--color-champagne);
+      max-width: 900px;
+    }
+
+    /* ==========================================================================
+       3. OUR SERVICES — INTERACTIVE MASTER-DETAIL STAGE (ALL 13 SERVICES)
+       ========================================================================== */
+    .services-main-section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .services-stage-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Left: Services Navigation List */
+    .services-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-radius: 18px;
+      background: rgba(244, 232, 204, 0.03);
+      border: 1px solid rgba(244, 232, 204, 0.08);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .service-nav-item:hover {
+      background: rgba(244, 232, 204, 0.07);
+      border-color: rgba(183, 123, 85, 0.4);
+      transform: translateX(6px);
+    }
+
+    .service-nav-item.active {
+      background: linear-gradient(135deg, rgba(72, 25, 29, 0.6) 0%, rgba(23, 20, 22, 0.85) 100%);
+      border-color: var(--color-copper);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.2),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+      transform: translateX(8px);
+    }
+
+    .nav-item-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .service-nav-num {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--color-copper);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .service-nav-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-champagne);
+      letter-spacing: -0.01em;
+      transition: color 0.25s ease;
+    }
+
+    .service-nav-item.active .service-nav-name {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .service-nav-arrow {
+      font-size: 1.1rem;
+      color: rgba(244, 232, 204, 0.4);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .service-nav-item.active .service-nav-arrow,
+    .service-nav-item:hover .service-nav-arrow {
+      color: var(--color-copper);
+      transform: translateX(4px);
+    }
+
+    /* Right: Interactive Showcase Stage */
+    .service-showcase-panel {
+      position: sticky;
+      top: 120px;
+      min-height: 580px;
+      border-radius: 32px;
+      background: linear-gradient(145deg, rgba(72, 25, 29, 0.4) 0%, rgba(23, 20, 22, 0.85) 60%, rgba(16, 13, 15, 0.98) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.18),
+        inset 0 0 60px rgba(72, 25, 29, 0.3),
+        0 24px 70px rgba(0, 0, 0, 0.6);
+      padding: 50px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .showcase-watermark-num {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: clamp(6rem, 12vw, 10rem);
+      font-weight: 900;
+      color: rgba(244, 232, 204, 0.03);
+      line-height: 0.8;
+      pointer-events: none;
+      font-family: var(--font-primary);
+      user-select: none;
+    }
+
+    .showcase-category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 24px;
+    }
+
+    .tag-slash {
+      color: rgba(244, 232, 204, 0.3);
+    }
+
+    .showcase-service-title {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--color-champagne);
+      margin-bottom: 24px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .showcase-service-desc {
+      font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+      line-height: 1.7;
+      color: rgba(244, 232, 204, 0.85);
+      margin-bottom: 36px;
+      max-width: 580px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .showcase-deliverables-wrap {
+      margin-top: auto;
+      padding-top: 32px;
+      border-top: 1px solid rgba(244, 232, 204, 0.1);
+    }
+
+    .deliverables-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244, 232, 204, 0.6);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .deliverables-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .deliverable-chip {
+      padding: 7px 16px;
+      border-radius: 9999px;
+      background: rgba(244, 232, 204, 0.06);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--color-champagne);
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ==========================================================================
+       4. OUR APPROACH — 4-STEP STRATEGIC METHODOLOGY
+       ========================================================================== */
+    .approach-section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .approach-connector-line {
+      position: absolute;
+      top: 42px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(183, 123, 85, 0.4), rgba(244, 232, 204, 0.2), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .approach-card {
+      position: relative;
+      z-index: 2;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(23, 20, 22, 0.8) 0%, rgba(16, 13, 15, 0.95) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.14),
+        0 20px 50px rgba(0, 0, 0, 0.5);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .approach-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(183, 123, 85, 0.5);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.22),
+        0 26px 60px rgba(72, 25, 29, 0.35);
+    }
+
+    .approach-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .approach-stage-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-copper);
+      font-family: var(--font-primary);
+    }
+
+    .approach-stage-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-copper);
+      box-shadow: 0 0 12px var(--color-copper);
+    }
+
+    .approach-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-champagne);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .approach-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(244, 232, 204, 0.7);
+    }
+
+    .approach-checklist {
+      margin-top: auto;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      padding-top: 20px;
+    }
+
+    .approach-checklist li {
+      font-size: 0.8rem;
+      color: rgba(244, 232, 204, 0.65);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .approach-checklist li::before {
+      content: '✦';
+      color: var(--color-copper);
+      font-size: 0.65rem;
+    }
+
+    /* ==========================================================================
+       5. MEET THE TEAM — COMPACT SINGLE-ROW HORIZONTAL CAROUSEL
+       ========================================================================== */
+    .team-section {
+      padding: 105px 0;
+      position: relative;
+    }
+
+    .team-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .team-carousel-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .carousel-nav-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(244, 232, 204, 0.06);
+      border: 1px solid rgba(244, 232, 204, 0.18);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: var(--color-champagne);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .carousel-nav-btn:hover:not(:disabled) {
+      background: var(--color-copper);
+      color: #fff;
+      border-color: var(--color-copper);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--color-copper-glow);
+    }
+
+    .carousel-nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .carousel-counter {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(244, 232, 204, 0.6);
+      letter-spacing: 0.1em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .carousel-counter .current-num {
+      color: var(--color-champagne);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* Carousel Track & Cards */
+    .team-carousel-viewport {
+      width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 12px 4px 32px 4px;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .team-carousel-viewport:active {
+      cursor: grabbing;
+    }
+
+    .team-carousel-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .team-carousel-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+    }
+
+    .team-carousel-card {
+      scroll-snap-align: start;
+      flex: 0 0 320px;
+      width: 320px;
+      height: 430px;
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(23, 20, 22, 0.85) 0%, rgba(16, 13, 15, 0.98) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.14),
+        0 16px 40px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s ease,
+                  box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-carousel-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(183, 123, 85, 0.55);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.22),
+        0 24px 60px rgba(72, 25, 29, 0.4);
+    }
+
+    .team-card-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #141113;
+    }
+
+    .team-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+      filter: saturate(104%) contrast(102%);
+    }
+
+    .team-carousel-card:hover .team-card-img {
+      transform: scale(1.06);
+    }
+
+    .team-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(16, 13, 15, 0.85) 75%, rgba(16, 13, 15, 0.98) 100%);
+      pointer-events: none;
+    }
+
+    .team-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 22px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-dept-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(23, 20, 22, 0.85);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      width: fit-content;
+      margin-bottom: 8px;
+      backdrop-filter: blur(8px);
+    }
+
+    .team-person-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-champagne);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .team-person-role {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(244, 232, 204, 0.72);
+      letter-spacing: 0.02em;
+    }
+
+    /* Carousel Progress Dots */
+    .carousel-dots-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .carousel-dot {
+      width: 28px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(244, 232, 204, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      width: 44px;
+      background: var(--color-copper);
+      box-shadow: 0 0 10px var(--color-copper);
+    }
+
+    /* ==========================================================================
+       6. CLOSING CTA SECTION
+       ========================================================================== */
+    .services-cta-section {
+      padding: 110px 0 60px;
+      position: relative;
+    }
+
+    .services-cta-card {
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(72, 25, 29, 0.55) 0%, rgba(23, 20, 22, 0.85) 60%, rgba(16, 13, 15, 0.95) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.2);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.2),
+        inset 0 0 60px rgba(72, 25, 29, 0.35),
+        0 30px 80px rgba(0, 0, 0, 0.7);
+      padding: 80px 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-glow-sphere {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 123, 85, 0.35) 0%, rgba(72, 25, 29, 0.4) 50%, transparent 75%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .cta-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 20px;
+    }
+
+    .cta-headline {
+      font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--color-champagne);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .cta-subtext {
+      font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+      color: rgba(244, 232, 204, 0.85);
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .cta-button-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 38px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(72, 25, 29, 0.95) 0%, rgba(183, 123, 85, 0.85) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.35);
+      color: var(--color-champagne);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(72, 25, 29, 0.6);
+    }
+
+    .cta-button-main:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(244, 232, 204, 0.6);
+      box-shadow: 0 16px 40px rgba(183, 123, 85, 0.6);
+    }
+
+    /* Marquee Banner */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 40px 0;
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      border-bottom: 1px solid rgba(244, 232, 204, 0.08);
+      margin-top: 60px;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 25s linear infinite;
+    }
+
+    .marquee-text {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(244, 232, 204, 0.22);
+      padding: 0 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .marquee-text .dot {
+      color: var(--color-copper);
+      -webkit-text-stroke: 0;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       7. SITE FOOTER
+       ========================================================================== */
+    .site-footer {
+      padding: 70px 0 40px;
+      border-top: 1px solid rgba(244, 232, 204, 0.1);
+      position: relative;
+    }
+
+    .footer-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-logo img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-tagline {
+      font-size: 0.74rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      font-weight: 600;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      font-size: 0.85rem;
+      color: rgba(244, 232, 204, 0.65);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-champagne);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(244, 232, 204, 0.05);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      color: var(--color-champagne);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .social-pill:hover {
+      background: rgba(183, 123, 85, 0.25);
+      border-color: var(--color-copper);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      font-size: 0.78rem;
+      color: rgba(244, 232, 204, 0.45);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Scroll Reveals */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .services-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .services-hero-visual-card {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .services-stage-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .service-showcase-panel {
+        position: static;
+        min-height: auto;
+      }
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .approach-connector-line {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-header {
+        height: 56px;
+        padding: 0 18px;
+      }
+      .nav-links, .header-cta {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .section-container {
+        padding: 0 20px;
+      }
+      .services-hero-section {
+        padding-top: 130px;
+        padding-bottom: 60px;
+      }
+      .service-showcase-panel {
+        padding: 36px 24px;
+      }
+      .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .team-carousel-card {
+        flex: 0 0 280px;
+        width: 280px;
+        height: 400px;
+      }
+      .services-cta-card {
+        padding: 50px 24px;
+        border-radius: 28px;
+      }
+      .footer-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .marquee-track, .orbital-ring, .ambient-glow-1, .ambient-glow-2, .word-token {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. AMBIENT LIGHTING BACKGROUND (Exact About Page Concept) -->
+  <div class="about-ambient-layer">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
+  </div>
+
+  <!-- 2. FLOATING iOS LIQUID GLASS NAVBAR -->
+  <div class="glass-header-wrapper">
+    <header class="glass-header">
+      <a href="index.html" class="header-logo" aria-label="Brand2be Home">
+        <img src="assets/brand2be-logo.png" alt="Brand2be Logo">
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html#contact" class="header-cta">
+        <span>Start a Conversation</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="services.html" class="mobile-nav-link" style="color: var(--color-champagne); font-weight: 700;">Services (Current)</a>
+    <a href="work.html" class="mobile-nav-link">Work</a>
+    <a href="index.html#contact" class="mobile-nav-link" style="color: var(--color-copper); font-weight: 700;">Start a Conversation &rarr;</a>
+  </div>
+
+  <!-- MAIN SITE WRAPPER -->
+  <div class="site-wrapper">
+
+    <!-- ======================================================================
+         1. HERO SECTION: WHAT WE DO — WE TURN VISION INTO IMPACT
+         ====================================================================== -->
+    <section class="services-hero-section" id="hero">
+      <div class="section-container">
+        <div class="services-hero-grid">
+          <div class="services-hero-content">
+            <h1 class="services-hero-title reveal-item">
+              WHAT WE DO<br>
+              WE TURN VISION INTO <span class="editorial-highlight">IMPACT</span>.
+            </h1>
+
+            <p class="word-reveal-desc" id="heroDescReveal">
+              From strategic thinking to creative execution, we bring together the expertise, technology and creativity needed to build stronger brands and meaningful digital experiences.
+            </p>
+
+            <div class="services-hero-nav-pills reveal-item reveal-delay-2">
+              <a href="#services" class="hero-pill-btn primary">
+                <span>Explore All Services</span>
+                <span>&darr;</span>
+              </a>
+              <a href="#approach" class="hero-pill-btn">
+                <span>Our Approach</span>
+              </a>
+              <a href="#team" class="hero-pill-btn">
+                <span>Meet The Team</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Central Orbital Creative Visual -->
+          <div class="services-hero-visual-card reveal-item reveal-delay-1">
+            <div class="hero-orbital-node">
+              <div class="orbital-ring ring-1"></div>
+              <div class="orbital-ring ring-2"></div>
+              <div class="orbital-ring ring-3"></div>
+              <div class="orbital-ring ring-4"></div>
+              <div class="orbital-ring ring-5"></div>
+            </div>
+
+            <div class="hero-center-monogram">
+              <div class="hero-triad-title">CREATIVITY &bull; TECH</div>
+              <div class="hero-triad-sub">FULL-SPECTRUM AGENCY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. OUR SERVICES — MAIN INTERACTIVE PRESENTATION (13 SERVICES)
+         ====================================================================== -->
+    <section class="services-main-section" id="services">
+      <div class="section-container">
+        <div class="editorial-section-header reveal-item">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-line"></span>
+            <span>OUR 13 CAPABILITIES</span>
+          </div>
+          <h2 class="section-heading-large">
+            CRAFTED WITH PRECISION. ENGINEERED FOR GROWTH.
+          </h2>
+        </div>
+
+        <div class="services-stage-container reveal-item reveal-delay-1">
+          <!-- Left: 13 Services Navigation Directory -->
+          <div class="services-nav-list" id="servicesNavList">
+            <!-- Populated via JavaScript -->
+          </div>
+
+          <!-- Right: Interactive Feature Showcase -->
+          <div class="service-showcase-panel" id="serviceShowcasePanel">
+            <div class="showcase-watermark-num" id="showcaseNum">01</div>
+
+            <div class="showcase-content-wrapper">
+              <div class="showcase-category-tag">
+                <span id="showcaseCat">BRANDING &amp; IDENTITY</span>
+                <span class="tag-slash">//</span>
+                <span id="showcaseIdx">SERVICE 01 OF 13</span>
+              </div>
+
+              <h3 class="showcase-service-title" id="showcaseTitle">Brand Identity &amp; Graphic Design</h3>
+
+              <p class="showcase-service-desc" id="showcaseDesc">
+                Building distinctive brand identities through visual strategy, logos, graphic systems and consistent brand guidelines.
+              </p>
+
+              <div class="showcase-deliverables-wrap">
+                <span class="deliverables-title">Key Disciplines &amp; Deliverables</span>
+                <div class="deliverables-chips" id="showcaseChips">
+                  <span class="deliverable-chip">Visual Identity Systems</span>
+                  <span class="deliverable-chip">Logo Suite &amp; Monograms</span>
+                  <span class="deliverable-chip">Brand Guidelines</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 0.8rem; color: rgba(244, 232, 204, 0.5);">Brand2be Integrated Framework</span>
+              <a href="index.html#contact" style="font-size: 0.82rem; font-weight: 700; color: var(--color-copper); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                <span>Inquire About This Service</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. OUR APPROACH — 4-STEP METHODOLOGY
+         ====================================================================== -->
+    <section class="approach-section" id="approach">
+      <div class="section-container">
+        <div class="editorial-section-header reveal-item">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-line"></span>
+            <span>PROVEN METHODOLOGY</span>
+          </div>
+          <h2 class="section-heading-large">
+            FROM INITIAL SPARK TO MEASURABLE IMPACT.
+          </h2>
+        </div>
+
+        <div class="approach-grid">
+          <div class="approach-connector-line"></div>
+
+          <!-- Stage 01 -->
+          <div class="approach-card reveal-item">
+            <div class="approach-card-top">
+              <span class="approach-stage-num">01</span>
+              <span class="approach-stage-dot"></span>
+            </div>
+            <div>
+              <h3 class="approach-title">Discover</h3>
+              <p class="approach-desc">Understanding the brand, its goals, audience and challenges.</p>
+            </div>
+            <ul class="approach-checklist">
+              <li>Comprehensive Brand Audit</li>
+              <li>Market &amp; Competitor Landscape</li>
+              <li>Stakeholder Alignment</li>
+            </ul>
+          </div>
+
+          <!-- Stage 02 -->
+          <div class="approach-card reveal-item reveal-delay-1">
+            <div class="approach-card-top">
+              <span class="approach-stage-num">02</span>
+              <span class="approach-stage-dot"></span>
+            </div>
+            <div>
+              <h3 class="approach-title">Strategize</h3>
+              <p class="approach-desc">Defining the creative direction, positioning and digital strategy.</p>
+            </div>
+            <ul class="approach-checklist">
+              <li>Distinctive Positioning</li>
+              <li>Omnichannel Roadmap</li>
+              <li>Creative Narrative Core</li>
+            </ul>
+          </div>
+
+          <!-- Stage 03 -->
+          <div class="approach-card reveal-item reveal-delay-2">
+            <div class="approach-card-top">
+              <span class="approach-stage-num">03</span>
+              <span class="approach-stage-dot"></span>
+            </div>
+            <div>
+              <h3 class="approach-title">Create</h3>
+              <p class="approach-desc">Turning ideas into visual identities, digital experiences and creative campaigns.</p>
+            </div>
+            <ul class="approach-checklist">
+              <li>Bespoke Design Systems</li>
+              <li>High-Impact Production</li>
+              <li>Full-Stack Development</li>
+            </ul>
+          </div>
+
+          <!-- Stage 04 -->
+          <div class="approach-card reveal-item reveal-delay-3">
+            <div class="approach-card-top">
+              <span class="approach-stage-num">04</span>
+              <span class="approach-stage-dot"></span>
+            </div>
+            <div>
+              <h3 class="approach-title">Elevate</h3>
+              <p class="approach-desc">Optimizing, measuring and improving the brand's digital presence.</p>
+            </div>
+            <ul class="approach-checklist">
+              <li>Performance Attribution</li>
+              <li>Continuous Iteration</li>
+              <li>Long-Term Brand Equity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. MEET THE TEAM — COMPACT SINGLE-ROW HORIZONTAL CAROUSEL
+         ====================================================================== -->
+    <section class="team-section" id="team">
+      <div class="section-container">
+        <div class="team-header-row reveal-item">
+          <div>
+            <div class="section-eyebrow">
+              <span class="section-eyebrow-line"></span>
+              <span>MEET THE TEAM</span>
+            </div>
+            <h2 class="section-heading-large">
+              THE MINDS BEHIND THE EXPERIENCES.
+            </h2>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="team-carousel-controls">
+            <div class="carousel-counter">
+              <span class="current-num" id="carouselCurrentNum">01</span> / <span id="carouselTotalNum">07</span>
+            </div>
+            <button class="carousel-nav-btn" id="teamPrevBtn" aria-label="Previous team member" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-nav-btn" id="teamNextBtn" aria-label="Next team member">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Viewport & Single-Row Track -->
+        <div class="team-carousel-viewport" id="teamCarouselViewport">
+          <div class="team-carousel-track">
+            <!-- 1. Zabari Adam -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/Adam.jpeg" alt="Zabari Adam — CEO &amp; Founder" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Executive Leadership</span>
+                <h3 class="team-person-name">Zabari Adam</h3>
+                <p class="team-person-role">CEO &amp; Founder</p>
+              </div>
+            </div>
+
+            <!-- 2. Mezouar Mohammed -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/Mahmoud.jpeg" alt="Mezouar Mohammed — Developer &amp; Automation Specialist" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Engineering &amp; AI</span>
+                <h3 class="team-person-name">Mezouar Mohammed</h3>
+                <p class="team-person-role">Developer &amp; Automation Specialist</p>
+              </div>
+            </div>
+
+            <!-- 3. Reda Guennoufa -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/bilal.jpg" alt="Reda Guennoufa — Directeur artistique" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Creative Direction</span>
+                <h3 class="team-person-name">Reda Guennoufa</h3>
+                <p class="team-person-role">Directeur artistique</p>
+              </div>
+            </div>
+
+            <!-- 4. Aya Frougui -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/Aya.jpg" alt="Aya Frougui — Community manager" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Social &amp; Community</span>
+                <h3 class="team-person-name">Aya Frougui</h3>
+                <p class="team-person-role">Community manager</p>
+              </div>
+            </div>
+
+            <!-- 5. Youssef Chdouga -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/Youssef.jpg" alt="Youssef Chdouga — Media buyer" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Performance Media</span>
+                <h3 class="team-person-name">Youssef Chdouga</h3>
+                <p class="team-person-role">Media buyer</p>
+              </div>
+            </div>
+
+            <!-- 6. Salhi Amine -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/amine.jpg" alt="Salhi Amine — Filmmaker &amp; Photographe" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Visual &amp; Film</span>
+                <h3 class="team-person-name">Salhi Amine</h3>
+                <p class="team-person-role">Filmmaker &amp; Photographe</p>
+              </div>
+            </div>
+
+            <!-- 7. Hdach Abdellah -->
+            <div class="team-carousel-card">
+              <div class="team-card-image-wrap">
+                <img src="assets/team/abdellah.jpg" alt="Hdach Abdellah — Éditeur" class="team-card-img" loading="lazy">
+                <div class="team-card-overlay"></div>
+              </div>
+              <div class="team-card-content">
+                <span class="team-dept-badge">Post-Production</span>
+                <h3 class="team-person-name">Hdach Abdellah</h3>
+                <p class="team-person-role">&Eacute;diteur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="carousel-dots-container" id="carouselDots">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FINAL CTA SECTION
+         ====================================================================== -->
+    <section class="services-cta-section">
+      <div class="section-container">
+        <div class="services-cta-card reveal-item">
+          <div class="cta-glow-sphere"></div>
+          <span class="cta-eyebrow">START A PROJECT</span>
+          <h2 class="cta-headline">READY TO BUILD SOMETHING DISTINCTIVE?</h2>
+          <p class="cta-subtext">
+            Let's bring your next idea to life with the right strategy, creativity and digital expertise.
+          </p>
+          <a href="index.html#contact" class="cta-button-main">
+            <span>Start a Conversation</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Animated Marquee Banner -->
+      <div class="marquee-container" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+          <span class="marquee-text">BUILD<span class="dot">&bull;</span>BRAND<span class="dot">&bull;</span>BE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. OFFICIAL SITE FOOTER
+         ====================================================================== -->
+    <footer class="site-footer">
+      <div class="section-container">
+        <div class="footer-top-row">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="assets/brand2be-logo.png" alt="Brand2be Official Logo">
+            </a>
+            <div class="footer-tagline">BUILD. BRAND. BE.</div>
+          </div>
+
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" style="color: var(--color-champagne); font-weight: 700;">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+
+          <div class="social-links">
+            <a href="#" class="social-pill" aria-label="Instagram">IG</a>
+            <a href="#" class="social-pill" aria-label="LinkedIn">LI</a>
+            <a href="#" class="social-pill" aria-label="Facebook">FB</a>
+            <a href="#" class="social-pill" aria-label="Behance">BE</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <div>&copy; 2026 Brand2be. All rights reserved.</div>
+          <div>BUILD. BRAND. BE. &mdash; Premium Creative &amp; Digital Agency</div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    (function () {
+      // ==========================================
+      // 1. SCROLL REVEAL OBSERVER FOR GENERAL ITEMS
+      // ==========================================
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal-item').forEach(el => revealObserver.observe(el));
+
+      // ==========================================
+      // 2. HERO PARAGRAPH WORD-BY-WORD SCROLL REVEAL
+      // ==========================================
+      const wordRevealEl = document.getElementById('heroDescReveal');
+      if (wordRevealEl) {
+        const text = wordRevealEl.textContent.trim();
+        const words = text.split(/\s+/);
+        wordRevealEl.innerHTML = words.map(w => `<span class="word-token">${w}</span>`).join(' ');
+
+        const tokens = wordRevealEl.querySelectorAll('.word-token');
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+          wordRevealEl.classList.add('active');
+        } else {
+          const wordObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                tokens.forEach((token, i) => {
+                  token.style.transitionDelay = `${i * 0.045}s`;
+                });
+                wordRevealEl.classList.add('active');
+                wordObserver.unobserve(wordRevealEl);
+              }
+            });
+          }, {
+            threshold: 0.25,
+            rootMargin: '0px 0px -40px 0px'
+          });
+
+          wordObserver.observe(wordRevealEl);
+        }
+      }
+
+      // ==========================================
+      // 3. MOBILE MENU TOGGLE
+      // ==========================================
+      const toggleBtn = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+
+      if (toggleBtn && mobileDrawer) {
+        toggleBtn.addEventListener('click', () => {
+          mobileDrawer.classList.toggle('open');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileDrawer.classList.remove('open');
+          });
+        });
+      }
+
+      // ==========================================
+      // 4. INTERACTIVE 13 SERVICES DIRECTORY ENGINE
+      // ==========================================
+      const servicesData = [
+        {
+          num: "01",
+          title: "Brand Identity & Graphic Design",
+          cat: "BRANDING & IDENTITY",
+          desc: "Building distinctive brand identities through visual strategy, logos, graphic systems and consistent brand guidelines.",
+          deliverables: ["Visual Identity Systems", "Logo Suite & Monograms", "Brand Guidelines", "Typography Architecture", "Iconography & Collateral"]
+        },
+        {
+          num: "02",
+          title: "Digital Marketing & Paid Advertising",
+          cat: "GROWTH & PERFORMANCE",
+          desc: "Strategic digital campaigns designed to increase visibility, attract qualified audiences and support business growth.",
+          deliverables: ["Meta & Google Ads", "Multi-Touch Funnels", "High-ROI Retargeting", "Creative Ad Concepts", "Budget Scaling"]
+        },
+        {
+          num: "03",
+          title: "Social Media Management",
+          cat: "COMMUNITY & INFLUENCE",
+          desc: "Content strategy, planning, creative production and community management across social platforms.",
+          deliverables: ["Editorial Calendars", "Organic Content Strategy", "Community Engagement", "Platform Optimization", "Trend Capitalization"]
+        },
+        {
+          num: "04",
+          title: "Website Development",
+          cat: "DIGITAL ENGINEERING",
+          desc: "Designing and developing modern, responsive and high-performance websites with fluid animations and bespoke UX.",
+          deliverables: ["Custom Front-End Engineering", "Responsive UX/UI", "Interactive WebGL/Canvas", "Performance Tuning", "CMS Architecture"]
+        },
+        {
+          num: "05",
+          title: "E-commerce Development",
+          cat: "COMMERCE & CONVERSION",
+          desc: "Creating optimized online stores and digital shopping experiences focused on usability, friction-free checkout and high conversion.",
+          deliverables: ["Custom Store Architecture", "Checkout Flow Optimization", "Payment Integrations", "Mobile First UX", "Conversion Rate Audits"]
+        },
+        {
+          num: "06",
+          title: "SEO & Search Visibility",
+          cat: "SEARCH & DISCOVERY",
+          desc: "Improving online visibility through technical SEO, content optimization and authoritative search engine positioning.",
+          deliverables: ["Technical SEO Architecture", "Strategic Keyword Mapping", "Core Web Vitals Tuning", "Content Gap Strategy", "Authority Building"]
+        },
+        {
+          num: "07",
+          title: "AI Automation",
+          cat: "INTELLIGENCE & SYSTEMS",
+          desc: "Integrating intelligent automation into business workflows to improve efficiency, eliminate friction and simplify repetitive tasks.",
+          deliverables: ["Custom AI Agent Workflows", "Pipeline Orchestration", "Customer Service Bots", "CRM Deep Sync", "Data Extraction Pipelines"]
+        },
+        {
+          num: "08",
+          title: "Photography & Videography",
+          cat: "VISUAL PRODUCTION",
+          desc: "Producing professional visual content that communicates brand identity, captures attention and commands respect.",
+          deliverables: ["Commercial Product Shoots", "Editorial Brand Stills", "Location Productions", "Creative Art Direction", "High-End Retouching"]
+        },
+        {
+          num: "09",
+          title: "Video Production & Reels",
+          cat: "MOTION & VIRAL CONTENT",
+          desc: "Creating engaging short-form videos, promotional content, viral reels and cinematic visual storytelling.",
+          deliverables: ["High-Energy Social Reels", "Brand Anthem Films", "Storyboard Direction", "Dynamic Sound Design", "Bespoke Color Grading"]
+        },
+        {
+          num: "10",
+          title: "3D Design & Architecture",
+          cat: "3D & SPATIAL EXPERIENCES",
+          desc: "Developing immersive 3D visuals, architectural presentations and creative digital environments.",
+          deliverables: ["Hyper-Realistic 3D Renders", "Architectural Walkthroughs", "Procedural Product CGI", "Spatial Environments", "Interactive 3D Assets"]
+        },
+        {
+          num: "11",
+          title: "Printing & Environmental Design",
+          cat: "PHYSICAL & BRAND ENVIRONMENT",
+          desc: "Designing professional print materials, luxury packaging, signage systems and tactile physical brand touchpoints.",
+          deliverables: ["Luxury Packaging Systems", "Exhibition & Retail Signage", "Editorial Catalogs", "Specialty Finishes & Foiling", "Large Format Displays"]
+        },
+        {
+          num: "12",
+          title: "Email Marketing",
+          cat: "RETENTION & LIFETIME VALUE",
+          desc: "Building email communication strategies, automated customer journeys, and conversion-focused newsletters.",
+          deliverables: ["Behavioral Email Flows", "Automated Retention Loops", "High-Converting Newsletters", "List Segmentation", "Deliverability Health"]
+        },
+        {
+          num: "13",
+          title: "Analytics & Reporting",
+          cat: "DATA INTELLIGENCE & INSIGHTS",
+          desc: "Tracking digital performance, analyzing results and transforming complex data into actionable executive decisions.",
+          deliverables: ["Executive KPI Dashboards", "GA4 Full Stack Setup", "Multi-Channel Attribution", "Monthly Strategic Advisory", "Conversion Funnel Audits"]
+        }
+      ];
+
+      const navListEl = document.getElementById('servicesNavList');
+      const numEl = document.getElementById('showcaseNum');
+      const catEl = document.getElementById('showcaseCat');
+      const idxEl = document.getElementById('showcaseIdx');
+      const titleEl = document.getElementById('showcaseTitle');
+      const descEl = document.getElementById('showcaseDesc');
+      const chipsEl = document.getElementById('showcaseChips');
+
+      function renderServiceShowcase(idx) {
+        const item = servicesData[idx];
+
+        // Animate elements out
+        titleEl.style.opacity = '0';
+        titleEl.style.transform = 'translateY(8px)';
+        descEl.style.opacity = '0';
+        descEl.style.transform = 'translateY(8px)';
+
+        setTimeout(() => {
+          numEl.textContent = item.num;
+          catEl.textContent = item.cat;
+          idxEl.textContent = `SERVICE ${item.num} OF ${servicesData.length}`;
+          titleEl.textContent = item.title;
+          descEl.textContent = item.desc;
+
+          chipsEl.innerHTML = item.deliverables.map(d => `<span class="deliverable-chip">${d}</span>`).join('');
+
+          // Animate elements back in
+          titleEl.style.opacity = '1';
+          titleEl.style.transform = 'translateY(0)';
+          descEl.style.opacity = '1';
+          descEl.style.transform = 'translateY(0)';
+        }, 120);
+
+        // Update active class in list
+        document.querySelectorAll('.service-nav-item').forEach((el, i) => {
+          if (i === idx) {
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active');
+          }
+        });
+      }
+
+      // Populate navigation list
+      if (navListEl) {
+        navListEl.innerHTML = servicesData.map((s, idx) => `
+          <div class="service-nav-item ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+            <div class="nav-item-left">
+              <span class="service-nav-num">${s.num}</span>
+              <span class="service-nav-name">${s.title}</span>
+            </div>
+            <span class="service-nav-arrow">&rarr;</span>
+          </div>
+        `).join('');
+
+        navListEl.querySelectorAll('.service-nav-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const idx = parseInt(item.getAttribute('data-index'), 10);
+            renderServiceShowcase(idx);
+          });
+          item.addEventListener('mouseenter', () => {
+            const idx = parseInt(item.getAttribute('data-index'), 10);
+            renderServiceShowcase(idx);
+          });
+        });
+      }
+
+      // ==========================================
+      // 5. COMPACT HORIZONTAL TEAM CAROUSEL
+      // ==========================================
+      const carouselViewport = document.getElementById('teamCarouselViewport');
+      const prevBtn = document.getElementById('teamPrevBtn');
+      const nextBtn = document.getElementById('teamNextBtn');
+      const currentNumEl = document.getElementById('carouselCurrentNum');
+      const totalNumEl = document.getElementById('carouselTotalNum');
+      const dotsContainer = document.getElementById('carouselDots');
+      const cards = document.querySelectorAll('.team-carousel-card');
+
+      if (carouselViewport && cards.length > 0) {
+        const totalCards = cards.length;
+        if (totalNumEl) totalNumEl.textContent = String(totalCards).padStart(2, '0');
+
+        // Render pagination dots
+        if (dotsContainer) {
+          dotsContainer.innerHTML = '';
+          cards.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+            dot.setAttribute('data-index', idx);
+            dot.setAttribute('aria-label', `Go to team member ${idx + 1}`);
+            dot.addEventListener('click', () => {
+              scrollToCard(idx);
+            });
+            dotsContainer.appendChild(dot);
+          });
+        }
+
+        function getCardWidth() {
+          const firstCard = cards[0];
+          return firstCard ? firstCard.getBoundingClientRect().width + 24 : 344;
+        }
+
+        function scrollToCard(idx) {
+          const target = Math.max(0, Math.min(idx, totalCards - 1));
+          const cardWidth = getCardWidth();
+          carouselViewport.scrollTo({
+            left: target * cardWidth,
+            behavior: 'smooth'
+          });
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            const cardWidth = getCardWidth();
+            const currentIdx = Math.round(carouselViewport.scrollLeft / cardWidth);
+            scrollToCard(currentIdx - 1);
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            const cardWidth = getCardWidth();
+            const currentIdx = Math.round(carouselViewport.scrollLeft / cardWidth);
+            scrollToCard(currentIdx + 1);
+          });
+        }
+
+        function updateCarouselState() {
+          const cardWidth = getCardWidth();
+          const activeIdx = Math.min(totalCards - 1, Math.max(0, Math.round(carouselViewport.scrollLeft / cardWidth)));
+
+          if (currentNumEl) {
+            currentNumEl.textContent = String(activeIdx + 1).padStart(2, '0');
+          }
+
+          if (dotsContainer) {
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+              dot.classList.toggle('active', i === activeIdx);
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.disabled = activeIdx === 0;
+          }
+          if (nextBtn) {
+            nextBtn.disabled = activeIdx >= totalCards - 1;
+          }
+        }
+
+        carouselViewport.addEventListener('scroll', updateCarouselState, { passive: true });
+        updateCarouselState();
+
+        // Mouse Drag to Scroll
+        let isDown = false;
+        let startX;
+        let scrollLeftVal;
+
+        carouselViewport.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - carouselViewport.offsetLeft;
+          scrollLeftVal = carouselViewport.scrollLeft;
+        });
+
+        carouselViewport.addEventListener('mouseleave', () => {
+          isDown = false;
+        });
+
+        carouselViewport.addEventListener('mouseup', () => {
+          isDown = false;
+        });
+
+        carouselViewport.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carouselViewport.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          carouselViewport.scrollLeft = scrollLeftVal - walk;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Brand2be — Premium Creative &amp; Digital Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-burgundy: #48191D;
+      --color-champagne: #F4E8CC;
+      --color-obsidian: #171416;
+      --color-dark-bg: #100D0F;
+      --color-copper: #B77B55;
+      --color-copper-glow: rgba(183, 123, 85, 0.4);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-editorial: 'Instrument Serif', Georgia, serif;
+      --glass-bg: rgba(244, 232, 204, 0.05);
+      --glass-border: rgba(244, 232, 204, 0.12);
+      --glass-shadow: 0 12px 36px rgba(16, 13, 15, 0.35);
+      --glass-highlight: inset 0 1px 0 rgba(244, 232, 204, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-dark-bg);
+      color: var(--color-champagne);
+      font-family: var(--font-primary);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-color: var(--color-dark-bg);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    ::selection {
+      background: var(--color-copper);
+      color: #fff;
+    }
+
+    /* Custom Minimal Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(244, 232, 204, 0.2);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(183, 123, 85, 0.6);
+    }
+
+    /* Ambient Lighting Background (Non-video, warm dimensional layers) */
+    .about-ambient-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-glow-1 {
+      position: absolute;
+      top: -10%;
+      left: 20%;
+      width: 70vw;
+      height: 70vw;
+      max-width: 800px;
+      max-height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(72, 25, 29, 0.32) 0%, rgba(72, 25, 29, 0.08) 50%, transparent 70%);
+      filter: blur(80px);
+      animation: floatGlow 22s ease-in-out infinite alternate;
+    }
+
+    .ambient-glow-2 {
+      position: absolute;
+      top: 45%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 700px;
+      max-height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 123, 85, 0.16) 0%, rgba(72, 25, 29, 0.12) 45%, transparent 70%);
+      filter: blur(90px);
+      animation: floatGlow 26s ease-in-out infinite alternate-reverse;
+    }
+
+    .ambient-glow-3 {
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 75vw;
+      height: 75vw;
+      max-width: 850px;
+      max-height: 850px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(72, 25, 29, 0.25) 0%, rgba(23, 20, 22, 0.1) 50%, transparent 70%);
+      filter: blur(100px);
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* Content Wrapper */
+    .site-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      background: transparent;
+    }
+
+    /* Floating iOS Liquid Glass Header */
+    .glass-header-wrapper {
+      position: fixed;
+      top: 24px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+      z-index: 1000;
+      pointer-events: none;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-header {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      height: 64px;
+      padding: 0 28px;
+      background: rgba(244, 232, 204, 0.08);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(244, 232, 204, 0.18);
+      border-radius: 9999px;
+      box-shadow:
+        inset 0 1px 0 rgba(244, 232, 204, 0.16),
+        0 12px 40px rgba(16, 13, 15, 0.45);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-header:hover {
+      background: rgba(244, 232, 204, 0.11);
+      border-color: rgba(244, 232, 204, 0.25);
+      box-shadow:
+        inset 0 1px 0 rgba(244, 232, 204, 0.2),
+        0 16px 48px rgba(16, 13, 15, 0.55);
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .header-logo img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .header-logo:hover img {
+      transform: scale(1.03);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(244, 232, 204, 0.8);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.25s ease, transform 0.25s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--color-copper);
+      transition: all 0.25s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-champagne);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      background: rgba(183, 123, 85, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(183, 123, 85, 0.5);
+      color: var(--color-champagne);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(183, 123, 85, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .header-cta:hover {
+      background: var(--color-copper);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px var(--color-copper-glow);
+    }
+
+    .header-cta svg {
+      transition: transform 0.3s ease;
+    }
+
+    .header-cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--color-champagne);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 96px;
+      left: 20px;
+      right: 20px;
+      background: rgba(16, 13, 15, 0.94);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      border-radius: 24px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      font-size: 1.15rem;
+      color: var(--color-champagne);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(244, 232, 204, 0.08);
+    }
+
+    /* Base Layout Container */
+    .section-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Section Label & Editorial Typography */
+    .section-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .editorial-headline {
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--color-champagne);
+    }
+
+    .editorial-highlight {
+      font-family: var(--font-editorial);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-champagne);
+    }
+
+    /* Hairline Separator */
+    .hairline-separator {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(244, 232, 204, 0.2) 0%, rgba(244, 232, 204, 0.04) 100%);
+      margin: 0;
+      border: none;
+    }
+
+    /* Liquid Glass Panels */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-highlight), var(--glass-shadow);
+      border-radius: 24px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-panel:hover {
+      background: rgba(244, 232, 204, 0.08);
+      border-color: rgba(244, 232, 204, 0.22);
+      box-shadow: inset 0 1px 0 rgba(244, 232, 204, 0.16), 0 16px 40px rgba(16, 13, 15, 0.4);
+    }
+
+    /* ==========================================================================
+       1. ABOUT HERO SECTION & REDESIGNED B2 SIGNATURE STAGE
+       ========================================================================== */
+    .about-hero-section {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 155px;
+      padding-bottom: 95px;
+      position: relative;
+    }
+
+    .about-hero-header {
+      width: 100%;
+      margin-bottom: 44px;
+    }
+
+    .about-hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--color-champagne);
+      max-width: 1050px;
+      margin: 0;
+    }
+
+    /* Redesigned Studio Card: The Interactive B2 Signature Composition */
+    .b2-signature-composition {
+      position: relative;
+      width: 100%;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(72, 25, 29, 0.42) 0%, rgba(23, 20, 22, 0.82) 55%, rgba(16, 13, 15, 0.94) 100%);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      backdrop-filter: blur(24px) saturate(130%);
+      -webkit-backdrop-filter: blur(24px) saturate(130%);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.16),
+        inset 0 0 50px rgba(72, 25, 29, 0.2),
+        0 30px 80px rgba(0, 0, 0, 0.65);
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 60px;
+      overflow: hidden;
+      margin-top: 10px;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .b2-signature-composition:hover {
+      border-color: rgba(244, 232, 204, 0.24);
+      box-shadow: 
+        inset 0 1px 0 rgba(244, 232, 204, 0.22),
+        inset 0 0 60px rgba(72, 25, 29, 0.3),
+        0 36px 90px rgba(0, 0, 0, 0.72);
+    }
+
+    /* Specular Cursor-Tracking Light Overlay */
+    .b2-specular-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(244, 232, 204, 0.13), rgba(183, 123, 85, 0.06) 40%, transparent 75%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    /* Left: Visual B2 Monogram Stage */
+    .b2-visual-column {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      will-change: transform;
+      z-index: 2;
+    }
+
+    .b2-sculpture-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1.08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 28px;
+      background: radial-gradient(circle at 50% 50%, rgba(72, 25, 29, 0.55) 0%, rgba(23, 20, 22, 0.5) 60%, transparent 100%);
+      border: 1px solid rgba(244, 232, 204, 0.12);
+      box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.5);
+      padding: 34px 28px;
+    }
+
+    /* Orbital rings & circular graphics */
+    .b2-orbital-system {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      pointer-events: none;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .b2-orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(244, 232, 204, 0.12);
+    }
+
+    .orbit-1 {
+      width: 190px;
+      height: 190px;
+      border-color: rgba(183, 123, 85, 0.35);
+      animation: spinOrbit 45s linear infinite;
+    }
+
+    .orbit-2 {
+      width: 270px;
+      height: 270px;
+      border-color: rgba(244, 232, 204, 0.1);
+    }
+
+    .orbit-3 {
+      width: 330px;
+      height: 330px;
+      border-color: rgba(72, 25, 29, 0.65);
+    }
+
+    .orbit-dashed {
+      width: 230px;
+      height: 230px;
+      border-style: dashed;
+      border-color: rgba(183, 123, 85, 0.3);
+      border-width: 1.5px;
+      animation: spinOrbit 32s linear infinite reverse;
+    }
+
+    @keyframes spinOrbit {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .b2-ambient-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 123, 85, 0.32) 0%, rgba(72, 25, 29, 0.4) 50%, transparent 75%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+
+    .b2-monogram-layer {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .b2-monogram-graphic {
+      width: auto;
+      height: 255px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: 
+        drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85))
+        drop-shadow(0 0 32px rgba(183, 123, 85, 0.35));
+      user-select: none;
+      pointer-events: none;
+      transition: filter 0.3s ease;
+    }
+
+    /* Right: Editorial Column */
+    .b2-editorial-column {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .editorial-top-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      margin-bottom: 22px;
+    }
+
+    .editorial-top-eyebrow .eyebrow-accent {
+      color: var(--color-champagne);
+      opacity: 0.6;
+    }
+
+    /* Scroll-Triggered Word Reveal Paragraph */
+    .interactive-typography-paragraph {
+      font-size: clamp(1.15rem, 1.55vw, 1.35rem);
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(244, 232, 204, 0.88);
+      margin-bottom: 28px;
+      position: relative;
+      letter-spacing: -0.01em;
+    }
+
+    .reveal-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(12px);
+      filter: blur(4px);
+      transition: 
+        opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+    }
+
+    .interactive-typography-paragraph.is-revealed .reveal-word {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* Editorial Quote Strip */
+    .editorial-quote-strip {
+      padding: 18px 24px;
+      border-radius: 16px;
+      background: rgba(244, 232, 204, 0.035);
+      border-left: 3px solid var(--color-copper);
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      border-right: 1px solid rgba(244, 232, 204, 0.08);
+      border-bottom: 1px solid rgba(244, 232, 204, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .editorial-quote-body {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: clamp(1.2rem, 1.85vw, 1.48rem);
+      line-height: 1.4;
+      color: var(--color-champagne);
+    }
+
+    /* Strategic Disciplines Row */
+    .b2-disciplines-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .discipline-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(244, 232, 204, 0.05);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(244, 232, 204, 0.85);
+      transition: all 0.25s ease;
+    }
+
+    .discipline-tag:hover {
+      background: rgba(244, 232, 204, 0.12);
+      border-color: rgba(183, 123, 85, 0.5);
+      transform: translateY(-2px);
+      color: var(--color-champagne);
+    }
+
+    .discipline-tag .tag-num {
+      color: var(--color-copper);
+      font-weight: 800;
+      font-size: 0.72rem;
+    }
+
+    /* Editorial Metadata Footer */
+    .editorial-meta-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(244, 232, 204, 0.1);
+      padding-top: 22px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-item .meta-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(244, 232, 204, 0.45);
+      font-weight: 600;
+    }
+
+    .meta-item .meta-val {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--color-champagne);
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       2. OUR MISSION & ANIMATED STATS SECTION
+       ========================================================================== */
+    .mission-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .mission-header-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 60px;
+      align-items: flex-start;
+      margin-bottom: 70px;
+    }
+
+    .mission-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mission-giant-number {
+      font-size: clamp(4.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(244, 232, 204, 0.3);
+      font-family: var(--font-primary);
+    }
+
+    .mission-left-badge {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-copper);
+      font-weight: 700;
+    }
+
+    .mission-right-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mission-statement {
+      font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--color-champagne);
+      max-width: 950px;
+    }
+
+    /* Four-Column Statistics Panel */
+    .stats-panel-wrapper {
+      padding: 44px 36px;
+      border-radius: 28px;
+      background: rgba(244, 232, 204, 0.04);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      box-shadow: inset 0 1px 0 rgba(244, 232, 204, 0.12), 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .stats-four-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .stat-metric-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px;
+      border-left: 1px solid rgba(244, 232, 204, 0.12);
+    }
+
+    .stat-metric-card:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .stat-counter-number {
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--color-champagne);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .stat-suffix {
+      color: var(--color-copper);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .stat-counter-label {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-champagne);
+      margin-bottom: 6px;
+    }
+
+    .stat-counter-sub {
+      font-size: 0.82rem;
+      color: rgba(244, 232, 204, 0.65);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       3. TRUSTED BRANDS — INFINITE LOGO CAROUSEL
+       ========================================================================== */
+    .trusted-brands-section {
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trusted-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .trusted-title {
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-champagne);
+    }
+
+    .trusted-marquee-container {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 24px 0;
+      border-top: 1px solid rgba(244, 232, 204, 0.1);
+      border-bottom: 1px solid rgba(244, 232, 204, 0.1);
+      background: rgba(244, 232, 204, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .trusted-marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      animation: scrollBrands 32s linear infinite;
+      will-change: transform;
+    }
+
+    .trusted-marquee-container:hover .trusted-marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Sleek Editorial Logo Plaques (Editable Placeholders) */
+    .logo-plaque {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 38px;
+      border-radius: 9999px;
+      background: rgba(244, 232, 204, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      color: rgba(244, 232, 204, 0.75);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(244, 232, 204, 0.08);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .logo-plaque:hover {
+      background: rgba(183, 123, 85, 0.2);
+      border-color: var(--color-copper);
+      color: var(--color-champagne);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--color-copper-glow);
+    }
+
+    @keyframes scrollBrands {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       4. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+       ========================================================================== */
+    .faq-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .faq-header-sticky {
+      position: sticky;
+      top: 120px;
+    }
+
+    .faq-title {
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--color-champagne);
+      margin-bottom: 20px;
+    }
+
+    .faq-intro-text {
+      font-size: 1.1rem;
+      color: rgba(244, 232, 204, 0.75);
+      line-height: 1.6;
+      max-width: 440px;
+    }
+
+    /* Modern Accordion Items */
+    .faq-accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      border-radius: 20px;
+      background: rgba(244, 232, 204, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(244, 232, 204, 0.12);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item:hover {
+      background: rgba(244, 232, 204, 0.07);
+      border-color: rgba(244, 232, 204, 0.22);
+    }
+
+    .faq-item.active {
+      background: rgba(72, 25, 29, 0.35);
+      border-color: rgba(183, 123, 85, 0.45);
+      box-shadow: 0 10px 30px rgba(72, 25, 29, 0.3);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 24px 28px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--color-champagne);
+    }
+
+    .faq-question-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-number {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-copper);
+      letter-spacing: 0.08em;
+    }
+
+    .faq-question {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--color-champagne);
+      transition: color 0.25s ease;
+    }
+
+    .faq-item.active .faq-question {
+      color: #fff;
+    }
+
+    .faq-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(244, 232, 204, 0.08);
+      border: 1px solid rgba(244, 232, 204, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-champagne);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.active .faq-icon {
+      background: var(--color-copper);
+      color: #fff;
+      transform: rotate(45deg);
+      border-color: var(--color-copper);
+    }
+
+    /* Accordion Content with CSS Grid Height Animation */
+    .faq-answer-collapse {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.active .faq-answer-collapse {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-answer-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer-text {
+      padding: 0 28px 24px 60px;
+      font-size: 0.96rem;
+      color: rgba(244, 232, 204, 0.85);
+      line-height: 1.65;
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      margin-top: 6px;
+      padding-top: 18px;
+    }
+
+    /* ==========================================================================
+       5. CONTACT SECTION — LET'S CONNECT
+       ========================================================================== */
+    .about-contact-section {
+      padding: 140px 0 100px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .contact-card-backdrop {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 70px 48px;
+      border-radius: 36px;
+      background: radial-gradient(circle at 50% 20%, rgba(72, 25, 29, 0.5) 0%, rgba(23, 20, 22, 0.85) 90%);
+      backdrop-filter: blur(28px) saturate(150%);
+      -webkit-backdrop-filter: blur(28px) saturate(150%);
+      border: 1px solid rgba(244, 232, 204, 0.18);
+      box-shadow: inset 0 1px 0 rgba(244, 232, 204, 0.15), 0 30px 80px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+    }
+
+    .contact-card-backdrop::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 240px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-copper), transparent);
+    }
+
+    .contact-headline {
+      font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      color: var(--color-champagne);
+      letter-spacing: -0.03em;
+      max-width: 800px;
+    }
+
+    .contact-body {
+      font-size: 1.18rem;
+      color: rgba(244, 232, 204, 0.85);
+      line-height: 1.6;
+      max-width: 620px;
+    }
+
+    .contact-btn {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 42px;
+      border-radius: 9999px;
+      background: var(--color-copper);
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      box-shadow: 0 10px 30px var(--color-copper-glow);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(183, 123, 85, 0.65);
+      background: #c98a63;
+    }
+
+    .contact-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .contact-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       6. FOOTER (MATCHING HOMEPAGE)
+       ========================================================================== */
+    footer.site-footer {
+      padding: 70px 0 40px;
+      border-top: 1px solid rgba(244, 232, 204, 0.08);
+      position: relative;
+    }
+
+    .footer-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--color-copper);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      font-size: 0.9rem;
+      color: rgba(244, 232, 204, 0.75);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-champagne);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(244, 232, 204, 0.06);
+      border: 1px solid rgba(244, 232, 204, 0.14);
+      color: var(--color-champagne);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.25s ease;
+    }
+
+    .social-pill:hover {
+      background: var(--color-copper);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: rgba(244, 232, 204, 0.45);
+      padding-top: 28px;
+      border-top: 1px solid rgba(244, 232, 204, 0.06);
+    }
+
+    /* Scroll Reveal Classes */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .reveal-word {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
+      .trusted-marquee-track {
+        animation: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .b2-signature-composition {
+        grid-template-columns: 1fr;
+        gap: 46px;
+        padding: 46px 36px;
+      }
+      .b2-sculpture-wrapper {
+        max-width: 340px;
+      }
+      .b2-monogram-graphic {
+        height: 220px;
+      }
+      .b2-orbital-system {
+        width: 300px;
+        height: 300px;
+      }
+      .mission-header-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .stats-four-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+      }
+      .stat-metric-card:nth-child(3) {
+        border-left: none;
+        padding-left: 0;
+      }
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .faq-header-sticky {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-header {
+        height: 56px;
+        padding: 0 18px;
+      }
+      .nav-links, .header-cta {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .about-hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      .b2-signature-composition {
+        padding: 34px 22px;
+        border-radius: 26px;
+        gap: 36px;
+      }
+      .b2-sculpture-wrapper {
+        max-width: 260px;
+      }
+      .b2-monogram-graphic {
+        height: 175px;
+      }
+      .b2-orbital-system {
+        width: 240px;
+        height: 240px;
+      }
+      .b2-disciplines-row {
+        gap: 8px;
+      }
+      .discipline-tag {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+      }
+      .stats-four-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .stat-metric-card {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 1px solid rgba(244, 232, 204, 0.1);
+        padding-bottom: 20px;
+      }
+      .stat-metric-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .faq-question-wrap {
+        gap: 12px;
+      }
+      .faq-question {
+        font-size: 1.02rem;
+      }
+      .faq-answer-text {
+        padding-left: 36px;
+      }
+      .contact-card-backdrop {
+        padding: 48px 24px;
+      }
+      .footer-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Atmospheric Dimensional Lighting Layers -->
+  <div class="about-ambient-layer">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow-3"></div>
+  </div>
+
+  <!-- FLOATING iOS LIQUID GLASS NAVBAR -->
+  <div class="glass-header-wrapper">
+    <header class="glass-header">
+      <a href="index.html" class="header-logo" aria-label="Brand2be Home">
+        <img src="assets/brand2be-logo.png" alt="Brand2be Logo">
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="header-cta">
+        <span>Start a Conversation</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link" style="color: var(--color-champagne); font-weight: 700;">About (Current)</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="work.html" class="mobile-nav-link">Work</a>
+    <a href="#contact" class="mobile-nav-link" style="color: var(--color-copper); font-weight: 700;">Start a Conversation &rarr;</a>
+  </div>
+
+  <!-- MAIN SITE WRAPPER -->
+  <div class="site-wrapper">
+
+    <!-- ==========================================
+         1. ABOUT HERO SECTION
+         ========================================== -->
+    <section class="about-hero-section" id="hero">
+      <div class="section-container">
+        <!-- Main Headline (refined editorial spacing) -->
+        <div class="about-hero-header reveal-item">
+          <h1 class="about-hero-title">
+            WE TURN IDEAS INTO <span class="editorial-highlight">DISTINCTIVE</span> BRAND EXPERIENCES.
+          </h1>
+        </div>
+
+        <!-- Redesigned Studio Component: The Interactive B2 Signature Showcase -->
+        <div class="b2-signature-composition reveal-item reveal-delay-1" id="b2SignatureContainer">
+          <!-- Specular Cursor-Tracking Light Overlay -->
+          <div class="b2-specular-light" id="b2SpecularLight"></div>
+
+          <!-- LEFT: Large Interactive B2 Monogram Sculpture -->
+          <div class="b2-visual-column" id="b2VisualCard">
+            <div class="b2-sculpture-wrapper">
+              <!-- Concentric hairline circular graphics and orbital rings -->
+              <div class="b2-orbital-system">
+                <div class="b2-orbit orbit-1"></div>
+                <div class="b2-orbit orbit-2"></div>
+                <div class="b2-orbit orbit-3"></div>
+                <div class="b2-orbit orbit-dashed"></div>
+                <div class="b2-ambient-glow"></div>
+              </div>
+
+              <!-- Official Brand2be B2 Monogram with 3D Parallax Depth -->
+              <div class="b2-monogram-layer" id="b2MonogramLayer">
+                <img src="assets/brand2be-b2-monogram.png" alt="Brand2be B2 Monogram" class="b2-monogram-graphic" id="b2MonogramImg">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Supporting Text with Scroll-Triggered Word Reveal -->
+          <div class="b2-editorial-column">
+            <div class="editorial-top-eyebrow">
+              <span class="eyebrow-accent">//</span>
+              <span class="eyebrow-text">CREATIVE &amp; DIGITAL AGENCY &mdash; BRAND2BE STUDIO</span>
+            </div>
+
+            <!-- Supporting Paragraph with Scroll-Triggered Word-by-Word Reveal -->
+            <p class="interactive-typography-paragraph" id="interactiveTypoParagraph">
+              Brand2be is a creative and digital agency combining strategy, branding, design and technology to help businesses build distinctive identities and meaningful digital experiences.
+            </p>
+
+            <!-- Studio Editorial Philosophy Quote -->
+            <div class="editorial-quote-strip">
+              <p class="editorial-quote-body">
+                &ldquo;Where strategic clarity marries uncompromising aesthetic ambition.&rdquo;
+              </p>
+            </div>
+
+            <!-- Strategic Discipline Pills -->
+            <div class="b2-disciplines-row">
+              <div class="discipline-tag">
+                <span class="tag-num">01</span>
+                <span class="tag-label">STRATEGY &amp; VISION</span>
+              </div>
+              <div class="discipline-tag">
+                <span class="tag-num">02</span>
+                <span class="tag-label">BESPOKE CRAFT</span>
+              </div>
+              <div class="discipline-tag">
+                <span class="tag-num">03</span>
+                <span class="tag-label">CREATIVE ENGINEERING</span>
+              </div>
+            </div>
+
+            <!-- Editorial Studio Metadata -->
+            <div class="editorial-meta-footer">
+              <div class="meta-item">
+                <span class="meta-label">DISCIPLINE</span>
+                <span class="meta-val">BRAND EXPERIENCE</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">PHILOSOPHY</span>
+                <span class="meta-val">BUILD. BRAND. BE.</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">COPYRIGHT</span>
+                <span class="meta-val">&copy; 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hairline-separator">
+
+    <!-- ==========================================
+         2. OUR MISSION & ANIMATED STATS
+         ========================================== -->
+    <section class="mission-section" id="mission">
+      <div class="section-container">
+        <div class="mission-header-grid">
+          <div class="mission-left-col reveal-item">
+            <div class="mission-giant-number">01</div>
+            <span class="mission-left-badge">FOUNDATION &amp; PURPOSE</span>
+          </div>
+
+          <div class="mission-right-col">
+            <span class="section-label reveal-item">OUR MISSION</span>
+            <h2 class="mission-statement reveal-item reveal-delay-1">
+              "We transform ideas into <span class="editorial-highlight">meaningful digital experiences</span> through strategy, creativity and technology."
+            </h2>
+          </div>
+        </div>
+
+        <!-- 4-Column Statistics Glass Panel -->
+        <div class="stats-panel-wrapper reveal-item reveal-delay-2">
+          <div class="stats-four-grid">
+            <!-- Stat 1 -->
+            <div class="stat-metric-card" data-target="85" data-suffix="+">
+              <div class="stat-counter-number">
+                <span class="counter-val">XX</span><span class="stat-suffix">+</span>
+              </div>
+              <div class="stat-counter-label">Projects Delivered</div>
+              <p class="stat-counter-sub">Across brand strategy, digital platforms, and campaigns.</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="stat-metric-card" data-target="40" data-suffix="+">
+              <div class="stat-counter-number">
+                <span class="counter-val">XX</span><span class="stat-suffix">+</span>
+              </div>
+              <div class="stat-counter-label">Brands Supported</div>
+              <p class="stat-counter-sub">From ambitious startups to established market leaders.</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="stat-metric-card" data-target="7" data-suffix="+">
+              <div class="stat-counter-number">
+                <span class="counter-val">XX</span><span class="stat-suffix">+</span>
+              </div>
+              <div class="stat-counter-label">Years of Experience</div>
+              <p class="stat-counter-sub">Collective multidisciplinary creative and technical mastery.</p>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="stat-metric-card" data-target="99" data-suffix="%">
+              <div class="stat-counter-number">
+                <span class="counter-val">XX</span><span class="stat-suffix">%</span>
+              </div>
+              <div class="stat-counter-label">Client Satisfaction</div>
+              <p class="stat-counter-sub">Rooted in transparent communication and enduring quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hairline-separator">
+
+    <!-- ==========================================
+         3. TRUSTED BRANDS — INFINITE LOGO CAROUSEL
+         ========================================== -->
+    <section class="trusted-brands-section" id="trusted">
+      <div class="section-container">
+        <div class="trusted-header reveal-item">
+          <span class="section-label">PARTNERSHIPS</span>
+          <h2 class="trusted-title">TRUSTED BY BRANDS &amp; CREATIVE VENTURES</h2>
+        </div>
+      </div>
+
+      <!-- Infinite Marquee Track with Sleek Editorial Logo Plaques -->
+      <div class="trusted-marquee-container reveal-item reveal-delay-1" aria-label="Brand Partnerships">
+        <div class="trusted-marquee-track">
+          <!-- Loop Set 1 -->
+          <div class="logo-plaque">LOGO • 01</div>
+          <div class="logo-plaque">LOGO • 02</div>
+          <div class="logo-plaque">LOGO • 03</div>
+          <div class="logo-plaque">LOGO • 04</div>
+          <div class="logo-plaque">LOGO • 05</div>
+          <div class="logo-plaque">LOGO • 06</div>
+          <div class="logo-plaque">LOGO • 07</div>
+          <div class="logo-plaque">LOGO • 08</div>
+
+          <!-- Loop Set 2 (for seamless loop) -->
+          <div class="logo-plaque" aria-hidden="true">LOGO • 01</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 02</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 03</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 04</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 05</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 06</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 07</div>
+          <div class="logo-plaque" aria-hidden="true">LOGO • 08</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hairline-separator">
+
+    <!-- ==========================================
+         4. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+         ========================================== -->
+    <section class="faq-section" id="faq">
+      <div class="section-container">
+        <div class="faq-layout">
+          <!-- Left Header (Sticky) -->
+          <div class="faq-header-sticky reveal-item">
+            <span class="section-label">FAQ</span>
+            <h2 class="faq-title">
+              FREQUENTLY <br>ASKED <span class="editorial-highlight">QUESTIONS.</span>
+            </h2>
+            <p class="faq-intro-text">
+              Everything you need to know about working with Brand2be.
+            </p>
+          </div>
+
+          <!-- Right Accordion List (Only one item open at a time) -->
+          <div class="faq-accordion-list reveal-item reveal-delay-1" id="faq-accordion">
+            <!-- Question 1 -->
+            <div class="faq-item active">
+              <button class="faq-trigger" aria-expanded="true" onclick="toggleFaq(this)">
+                <div class="faq-question-wrap">
+                  <span class="faq-number">01</span>
+                  <span class="faq-question">What services does Brand2be offer?</span>
+                </div>
+                <span class="faq-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer-collapse">
+                <div class="faq-answer-inner">
+                  <p class="faq-answer-text">
+                    Brand2be provides a range of creative and digital services, including brand identity, graphic design, website development, e-commerce, digital marketing, social media management, SEO, photography, video production and AI automation.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+                <div class="faq-question-wrap">
+                  <span class="faq-number">02</span>
+                  <span class="faq-question">Do you work with businesses from different industries?</span>
+                </div>
+                <span class="faq-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer-collapse">
+                <div class="faq-answer-inner">
+                  <p class="faq-answer-text">
+                    Yes. Brand2be approaches each project according to the client's industry, objectives and specific requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+                <div class="faq-question-wrap">
+                  <span class="faq-number">03</span>
+                  <span class="faq-question">How does the collaboration process work?</span>
+                </div>
+                <span class="faq-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer-collapse">
+                <div class="faq-answer-inner">
+                  <p class="faq-answer-text">
+                    Every collaboration begins with understanding the client's needs and objectives. We then define the appropriate strategy, plan the project and move through the creative and development process.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+                <div class="faq-question-wrap">
+                  <span class="faq-number">04</span>
+                  <span class="faq-question">Can Brand2be handle an entire digital project?</span>
+                </div>
+                <span class="faq-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer-collapse">
+                <div class="faq-answer-inner">
+                  <p class="faq-answer-text">
+                    Brand2be can support projects across different stages, from strategy and creative direction to website development, digital marketing and ongoing optimization, depending on the project scope.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+                <div class="faq-question-wrap">
+                  <span class="faq-number">05</span>
+                  <span class="faq-question">Can I request a customized service package?</span>
+                </div>
+                <span class="faq-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer-collapse">
+                <div class="faq-answer-inner">
+                  <p class="faq-answer-text">
+                    Yes. Services and project scope can be adapted according to each client's needs, priorities and objectives.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. CONTACT SECTION — LET'S CONNECT
+         ========================================== -->
+    <section class="about-contact-section" id="contact">
+      <div class="section-container">
+        <div class="contact-card-backdrop reveal-item">
+          <span class="section-label">LET'S CONNECT</span>
+          <h2 class="contact-headline">
+            LET'S BUILD SOMETHING <br><span class="editorial-highlight">THAT MATTERS.</span>
+          </h2>
+          <p class="contact-body">
+            Have an ambitious idea or a brand ready for its next chapter? Let's create something meaningful together.
+          </p>
+          <a href="mailto:hello@brand2be.agency" class="contact-btn">
+            <span>START A CONVERSATION</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. FOOTER (REUSING HOMEPAGE IDENTITY)
+         ========================================== -->
+    <footer class="site-footer">
+      <div class="section-container">
+        <div class="footer-top-row">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="assets/brand2be-logo.png" alt="Brand2be Official Logo">
+            </a>
+            <div class="footer-tagline">BUILD. BRAND. BE.</div>
+          </div>
+
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="social-links">
+            <a href="#" class="social-pill" aria-label="Instagram">IG</a>
+            <a href="#" class="social-pill" aria-label="LinkedIn">LI</a>
+            <a href="#" class="social-pill" aria-label="Facebook">FB</a>
+            <a href="#" class="social-pill" aria-label="Behance">BE</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <div>&copy; 2026 Brand2be. All rights reserved.</div>
+          <div>BUILD. BRAND. BE. &mdash; Premium Creative &amp; Digital Agency</div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    (function () {
+      // 1. SCROLL REVEAL OBSERVER
+      const observerOptions = {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      };
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal-item').forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      // 2. MOBILE MENU TOGGLE
+      const toggleBtn = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+
+      if (toggleBtn && mobileDrawer) {
+        toggleBtn.addEventListener('click', () => {
+          mobileDrawer.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileDrawer.classList.remove('open');
+          });
+        });
+      }
+
+      // 3. ANIMATED STATISTICS COUNTER
+      let statsAnimated = false;
+      const statsPanel = document.querySelector('.stats-panel-wrapper');
+
+      function animateCounters() {
+        if (statsAnimated) return;
+        statsAnimated = true;
+
+        const statCards = document.querySelectorAll('.stat-metric-card');
+        statCards.forEach((card) => {
+          const target = parseInt(card.getAttribute('data-target'), 10) || 50;
+          const counterEl = card.querySelector('.counter-val');
+          if (!counterEl) return;
+
+          const duration = 1800; // ms
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // EaseOutCubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(ease * target);
+
+            counterEl.textContent = String(currentVal).padStart(target < 10 ? 2 : 1, '0');
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              counterEl.textContent = target < 10 ? '0' + target : target;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        });
+      }
+
+      if (statsPanel) {
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        statsObserver.observe(statsPanel);
+      }
+
+      // ======================================================================
+      // 5. INTERACTIVE B2 SIGNATURE SCULPTURE (3D TILT, SPECULAR & PARALLAX)
+      // ======================================================================
+      function initB2Signature() {
+        const container = document.getElementById('b2SignatureContainer');
+        const visualCard = document.getElementById('b2VisualCard');
+        const monogramLayer = document.getElementById('b2MonogramLayer');
+        const orbitalSystem = document.querySelector('.b2-orbital-system');
+        const specular = document.getElementById('b2SpecularLight');
+
+        if (!container || !visualCard) return;
+
+        let targetRotX = 0, targetRotY = 0;
+        let currentRotX = 0, currentRotY = 0;
+        let targetMonX = 0, targetMonY = 0;
+        let currentMonX = 0, currentMonY = 0;
+        let isHovered = false;
+
+        container.addEventListener('mousemove', (e) => {
+          isHovered = true;
+          const rect = container.getBoundingClientRect();
+          const mouseX = e.clientX - rect.left;
+          const mouseY = e.clientY - rect.top;
+
+          // Track specular reflection
+          if (specular) {
+            specular.style.setProperty('--mouse-x', `${mouseX}px`);
+            specular.style.setProperty('--mouse-y', `${mouseY}px`);
+            specular.style.opacity = '1';
+          }
+
+          // 3D Tilt calculation (subtle luxury angles)
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const normX = Math.max(-1, Math.min(1, (mouseX - centerX) / centerX));
+          const normY = Math.max(-1, Math.min(1, (mouseY - centerY) / centerY));
+
+          targetRotY = normX * 7.5;  // Rotate around Y
+          targetRotX = -normY * 7.5; // Rotate around X
+
+          // Monogram floating parallax (moves towards cursor)
+          targetMonX = normX * 16;
+          targetMonY = normY * 14;
+        });
+
+        container.addEventListener('mouseleave', () => {
+          isHovered = false;
+          targetRotX = 0;
+          targetRotY = 0;
+          targetMonX = 0;
+          targetMonY = 0;
+          if (specular) {
+            specular.style.opacity = '0';
+          }
+        });
+
+        // Continuous render loop with smooth damping lerp & ambient floating
+        function updateB2Motion() {
+          const lerp = 0.085;
+          currentRotX += (targetRotX - currentRotX) * lerp;
+          currentRotY += (targetRotY - currentRotY) * lerp;
+          currentMonX += (targetMonX - currentMonX) * lerp;
+          currentMonY += (targetMonY - currentMonY) * lerp;
+
+          const time = performance.now() * 0.0016;
+          const ambientFloat = isHovered ? 0 : Math.sin(time) * 4.5;
+          const ambientRotate = isHovered ? 0 : Math.cos(time * 0.7) * 0.8;
+
+          if (visualCard) {
+            visualCard.style.transform = `perspective(1100px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) translateY(${ambientFloat.toFixed(2)}px)`;
+          }
+
+          if (monogramLayer) {
+            monogramLayer.style.transform = `translate3d(${currentMonX.toFixed(2)}px, ${(currentMonY + ambientFloat * 0.4).toFixed(2)}px, 24px) rotateZ(${ambientRotate.toFixed(2)}deg)`;
+          }
+
+          if (orbitalSystem) {
+            orbitalSystem.style.transform = `translate(-50%, -50%) translate3d(${(-currentMonX * 0.35).toFixed(2)}px, ${(-currentMonY * 0.35).toFixed(2)}px, -12px)`;
+          }
+
+          requestAnimationFrame(updateB2Motion);
+        }
+
+        requestAnimationFrame(updateB2Motion);
+      }
+      initB2Signature();
+
+      // ======================================================================
+      // 6. SCROLL-TRIGGERED WORD-BY-WORD REVEAL ANIMATION
+      // ======================================================================
+      function initScrollWordReveal() {
+        const paragraph = document.getElementById('interactiveTypoParagraph');
+        if (!paragraph) return;
+
+        // Respect reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+          paragraph.classList.add('is-revealed');
+          return;
+        }
+
+        const rawText = paragraph.textContent.trim();
+        const words = rawText.split(/\s+/);
+
+        // Wrap complete words in spans with staggered transition delay
+        paragraph.innerHTML = words.map((word, idx) => {
+          const delay = (idx * 0.048).toFixed(3);
+          return `<span class="reveal-word" style="transition-delay: ${delay}s;">${word}</span>`;
+        }).join(' ');
+
+        // Trigger animation automatically when paragraph enters viewport
+        const wordObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              paragraph.classList.add('is-revealed');
+              // Unobserve immediately: only reveals once and stays visible permanently
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        wordObserver.observe(paragraph);
+      }
+      initScrollWordReveal();
+    })();
+
+    // 4. ACCORDION (ONLY ONE ITEM OPEN AT A TIME)
+    function toggleFaq(button) {
+      const item = button.closest('.faq-item');
+      const allItems = document.querySelectorAll('.faq-item');
+      const isAlreadyActive = item.classList.contains('active');
+
+      allItems.forEach(i => {
+        i.classList.remove('active');
+        const btn = i.querySelector('.faq-trigger');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isAlreadyActive) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</body>
+</html>
